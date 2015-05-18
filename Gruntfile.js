@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        includePaths: ['bower_components/foundation/scss']
+        includePaths: ['../../../../shared/drupal-7.x/themes/elmsln_contrib/foundation_access/bower_components/foundation/scss', '../../../../shared/drupal-7.x/themes/elmsln_contrib/foundation_access/scss']
       },
       dist: {
         options: {

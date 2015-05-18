@@ -1,14 +1,20 @@
-@import "colorscheme";
+//////
+/// Use Foundation Access subtheme to do theme styling.
+/// No SASS here due to complexity (impossiblity?) of importing Zurb Foundation mixins without overwritting Foundation Access styling :(
+//////
+
+
+
+// @import "colorscheme";
 // @import "settings";
-@import "foundation";
+// @import "foundation"; // Imported from Foundation Access base theme via path set in gruntfile.js (to make local, set to bower_components/foundation/scss)
 
 ////////// customizations
 // @import "morphsearch";
-//@import "foundation/components/icon-bar";
 // @import "mixins";
-@import "fonts";
+// @import "fonts";
 //////////
-@import "common";
+// @import "common";
 // @import "admin_menu";
 // @import "admin-status-bar";
 // @import "main-navigation-topbar";
@@ -26,40 +32,3 @@
 // @import "content-styles/pullquote";
 // @import "content-styles/print";
 // @import "content-styles/author";
-// Or selectively include components
-// @import
-//   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
-//   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
-//   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
-//   "foundation/components/inline-lists",
-//   "foundation/components/joyride",
-//   "foundation/components/keystrokes",
-//   "foundation/components/labels",
-//   "foundation/components/magellan",
-//   "foundation/components/orbit",
-//   "foundation/components/pagination",
-//   "foundation/components/panels",
-//   "foundation/components/pricing-tables",
-//   "foundation/components/progress-bars",
-//   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
-//   "foundation/components/switches",
-//   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
