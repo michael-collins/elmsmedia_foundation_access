@@ -11,7 +11,14 @@
     $cis_lmsless['active']['title'] = '';
   }
 ?>
-    <div id="etb-tool-nav" class="off-canvas-wrap" data-offcanvas>
+    <?php if (!empty($page['left_menu'])): ?>
+      <div id="etb-tool-nav" class="off-canvas-wrap" data-offcanvas>
+    <?php endif; ?>
+   
+    <?php if (empty($page['left_menu'])): ?>
+      <div id="etb-tool-nav">
+    <?php endif; ?>
+      
       <div class="inner-wrap">
         <?php if (isset($cis_lmsless['admin_status_bar']) && !empty($cis_lmsless['admin_status_bar'])) : ?>
          <!-- Admin Status Bar -->
@@ -28,6 +35,8 @@
           <div class="page-scroll progress">
             <span class="meter" style="width: 0%"></span>
           </div>
+
+
           <nav class="tab-bar etb-tool">
           <section class="left">
             <a class="left-off-canvas-toggle menu-icon" ><span><?php print $cis_lmsless['active']['title'] ?></span></a>
@@ -46,6 +55,8 @@
             </a>
           </section>
           <?php endif; ?>
+         
+
           <!-- Modal -->
           <?php if (isset($speedreader) || isset($mespeak)) : ?>
           <div id="page-tools-menu" class="reveal-modal" data-reveal aria-labelledby="Accessibility" aria-hidden="true" role="dialog">
@@ -143,13 +154,17 @@
         <div class=" hide-for-small-only large-3 pull-9 columns">
             
           <?php print render($page['sidebar_first']); ?>
+          
             
         </div>
         
       </div>
         </section>
 
-      <a class="exit-off-canvas"></a>
+       <?php if (!empty($page['left_menu'])): ?>
+       <a class="exit-off-canvas"></a>
+      <?php endif; ?>
+
       </div>
     </div>
     <footer class="sticky-footer">
