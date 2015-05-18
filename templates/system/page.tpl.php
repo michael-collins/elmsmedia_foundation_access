@@ -38,23 +38,38 @@
 
 
           <nav class="tab-bar etb-tool">
+          
           <section class="left">
-            <a class="left-off-canvas-toggle menu-icon" ><span><?php print $cis_lmsless['active']['title'] ?></span></a>
+            <!-- If the off-canvas menu is in use, activate off canvas toggle -->
+            <?php if (!empty($page['left_menu'])): ?>
+              <a class="left-off-canvas-toggle menu-icon" ><span><?php print $cis_lmsless['active']['title'] ?></span></a>
+            <?php endif; ?>
+            <!-- Add Button -->
+           
+              <a data-dropdown="add-menu-drop" aria-controls="add-menu-drop" aria-expanded="false" href="#" class="middle-align-wrap add-menu-drop"><span>Add</span><div class="icon-plus-white off-canvas-toolbar-item-icon"></div></a>
+              <ul id="add-menu-drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1" class="menu"><li class="first leaf"><a href="/node/add/audio" title="">Audio</a></li>
+                <li class="leaf"><a href="/node/add/document" title="">Document</a></li>
+                <li class="leaf"><a href="/node/add/external-video" title="">External Video</a></li>
+                <li class="leaf"><a href="/node/add/elmsmedia-image" title="">Image</a></li>
+                <li class="last leaf"><a href="/node/add/video" title="">Video</a></li>
+              </ul>
           </section>
+
 
           <section class="middle tab-bar-section">
           <?php if (!empty($tabs['#primary']) || !empty($tabs['#secondary']) || !empty($tabs_extras)): ?>
-              <a class="off-canvas-toolbar-item toolbar-menu-icon" href="#" data-dropdown="middle-section-buttons" aria-controls="middle-section-buttons" aria-expanded="false"><div class="icon-chevron-down-black off-canvas-toolbar-item-icon"></div></a>
+              <li class="toolbar-menu-icon"><a class="off-canvas-toolbar-item" href="#" data-dropdown="middle-section-buttons" aria-controls="middle-section-buttons" aria-expanded="false"><div class="icon-chevron-down-black off-canvas-toolbar-item-icon"></div></a></li>
           <?php endif; ?>
-          </section>
+          
           <?php print render($page['cis_appbar_second']); ?>
           <?php if (isset($speedreader) || isset($mespeak)) : ?>
-          <section class="right-small">
-            <a href="#" class="off-canvas-toolbar-item access-icon" data-reveal-id="page-tools-menu" aria-controls="accessibility-drop" aria-expanded="false">
+          
+            <li class="toolbar-menu-icon divider-left"><a href="#" class="off-canvas-toolbar-item" data-reveal-id="page-tools-menu" aria-controls="accessibility-drop" aria-expanded="false">
               <div class="icon-access-black off-canvas-toolbar-item-icon"></div>
-            </a>
-          </section>
+            </a></li>
           <?php endif; ?>
+          </section>
+          
          
 
           <!-- Modal -->
@@ -120,8 +135,11 @@
       </div>
     
       <div class="row">
-        <div class="large-9 push-3 columns">
-          
+        <!-- If sidebar_first IS NOT empty-->
+        <?php if (!empty($page['sidebar_first'])): ?><div class="large-9 push-3 columns"><?php endif; ?>
+        <!-- If sidebar_first IS empty-->
+        <?php if (empty($page['sidebar_first'])): ?><div class="small-12 columns"><?php endif; ?>
+
           <div class="row">
             <div class="content-element-region small-12 medium-12 large-12 columns">
               <div class="row">
@@ -151,12 +169,11 @@
           </div>
           
         </div>
-        <div class=" hide-for-small-only large-3 pull-9 columns">
-            
-          <?php print render($page['sidebar_first']); ?>
-          
-            
-        </div>
+
+        <!-- If sidebar_first IS NOT empty-->
+        <?php if (!empty($page['sidebar_first'])): ?>
+          <div class="large-3 pull-9 columns"><?php print render($page['sidebar_first']); ?></div>
+        <?php endif; ?>
         
       </div>
         </section>
