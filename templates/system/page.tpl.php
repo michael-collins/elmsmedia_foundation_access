@@ -21,13 +21,24 @@
       
       <div class="inner-wrap">
         <?php if (isset($cis_lmsless['admin_status_bar']) && !empty($cis_lmsless['admin_status_bar'])) : ?>
+        
          <!-- Admin Status Bar -->
-         <div class="row full admin-status-bar divider-bottom">
+         <div class="hide-for-large-up row full admin-status-bar divider-bottomv">
             <div class="columns small-12">
-            <?php foreach($cis_lmsless['admin_status_bar'] as $admin_status_msg_key => $admin_status_msg) : ?>
-            <span class="<?php print $admin_status_msg_key;?>-label"><?php print $admin_status_msg[0];?>: </span>
-            <span class="<?php print $admin_status_msg_key;?>"><?php print $admin_status_msg[1];?></span>
-            <?php endforeach ?>
+            
+              <!-- <a href="#" class="admin-alert middle-align-wrap">
+                <span class="">ADMINISTRATOR</span>
+              </a>
+              <a href="#" class="middle-align-wrap">
+                <span class="hide-for-large-up">201415WDS1_SOMECOURSE_001</span>
+              </a> -->
+
+             <?php foreach($cis_lmsless['admin_status_bar'] as $admin_status_msg_key => $admin_status_msg) : ?>
+              <span class="<?php print $admin_status_msg_key;?>-label"><?php print $admin_status_msg[0];?>: </span>
+              <span class="<?php print $admin_status_msg_key;?>"><?php print $admin_status_msg[1];?></span>
+              <?php endforeach ?>
+
+
             </div>
           </div>
         <?php endif; ?>
